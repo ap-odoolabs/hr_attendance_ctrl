@@ -1,0 +1,2 @@
+Planning:
+HR Attendance Control | HR Attendance Face recognition | HR Attendance Geospatial Control | HR Attendance Photo | HR Attendance Reason | HR Attendance Geolocation | HR Attendance Geofence | HR Attendance IP Address | Geolocation | Geofence | Face Recognition | IP Address | Reason

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_form_hr_attendance_ctrl" model="ir.ui.view">
+    <field name="name">hr.attendance.location.form</field>
+    <field name="model">hr.attendance</field>
+    <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//sheet/group" position="inside">
+        <group string="Office Locations">
+          <field name="checkin_office_location_id" readonly="1"/>
+          <field name="checkout_office_location_id" readonly="1"/>
+        </group>
+      </xpath>
+    </field>
+  </record>
+</odoo>

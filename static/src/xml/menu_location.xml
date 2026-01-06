@@ -1,0 +1,14 @@
+<templates xml:space="preserve">
+  <t t-name="hr_attendance_ctrl.MenuLocation">
+    <div class="o_att_location_info mb-3">
+      <small class="text-muted">Office</small>
+      <div class="fs-5"><t t-esc="location"/></div>
+      <div class="text-muted"><small>GPS Coordinates</small></div>
+      <div>
+        <t t-set="lat" t-value="typeof latitude !== 'undefined' ? latitude : '-'"/>
+        <t t-set="lon" t-value="typeof longitude !== 'undefined' ? longitude : '-'"/>
+        <t t-esc="lat"/> , <t t-esc="lon"/>
+      </div>
+    </div>
+  </t>
+</templates>

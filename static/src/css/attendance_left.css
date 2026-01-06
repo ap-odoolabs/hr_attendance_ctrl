@@ -1,0 +1,21 @@
+/* Scope helper classes */
+.o_att_box_root {
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+
+/* The attendance inner box stays left-aligned, but key is popover correction via JS */
+.o_att_menu_container.o_att_box_left {
+  text-align: left !important;
+  align-self: flex-start !important;
+}
+
+.btn-custom-blue {
+    background-color: #007bff !important;  /* !important untuk override Bootstrap jika perlu */
+    border-color: #007bff;
+    color: white;
+}
+.btn-custom-blue:hover {
+    background-color: #0056b3;  /* Biru lebih gelap saat hover */
+    border-color: #0056b3;
+}

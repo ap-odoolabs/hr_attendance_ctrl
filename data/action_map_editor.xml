@@ -1,0 +1,7 @@
+<odoo>
+  <record id="action_open_map_editor" model="ir.actions.act_url">
+    <field name="name">Polygon Editor</field>
+    <field name="url">/attendance_ctrl/map_editor</field>
+    <field name="target">new</field>
+  </record>
+</odoo>

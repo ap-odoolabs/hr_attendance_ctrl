@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>HR Attendance Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <style>
+        :root {
+            --primary-color: #1f4fd8;
+            --text-color-light: #6b7280;
+        }
+
+        body {
+            background-color: #f5f6f8;
+            font-family: "Montserrat", Arial, sans-serif;
+        }
+
+        .card-box {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* Screenshot blocks */
+        .shot-wrap {
+            border-radius: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .shot-title {
+            font-weight: 700;
+            line-height: 120%;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 40px;
+        }
+
+        .shot-desc {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            text-align: center;
+            color: var(--text-color-light);
+        }
+    </style>
+</head>
+
+<body>
+<div class="container my-5">
+
+    <!-- HERO -->
+    <div class="card-box text-center">
+        <h1 class="section-title">HR Attendance Control</h1>
+        <p class="section-subtitle">
+            GPS-based Attendance Validation &amp; Protection for Odoo 18
+        </p>
+        <img src="banner.png" class="img-fluid rounded" alt="HR Attendance Control Banner">
+    </div>
+
+    <!-- KEY FEATURES -->
+    <div class="card-box">
+        <h2 class="section-title">Key Features</h2>
+        <div class="row text-center mt-4">
+            <div class="col-md-4 mb-3">📍 GPS-based Attendance Validation</div>
+            <div class="col-md-4 mb-3">🏢 Office Location Control</div>
+            <div class="col-md-4 mb-3">🔒 Attendance Protection</div>
+            <div class="col-md-4 mb-3">⚡ Optimized Check-in / Check-out</div>
+            <div class="col-md-4 mb-3">🧠 Smart Location Guard</div>
+            <div class="col-md-4 mb-3">🗺 Geo-aware HR Attendance</div>
+        </div>
+    </div>
+
+    <!-- KEY CONFIGURATION -->
+    <div class="card-box">
+        <h2 class="section-title">Configuration</h2>
+        <div class="row text-center mt-4">
+
+        <li>Install: <strong>hr_attendance_ctrl</strong></li>
+        <li>Go to <strong>Attendances</strong> &rarr; <strong>Office Locations</strong></li>
+        <li>Create an office and define the polygon boundary (WKT / map editor, depending on your setup)</li>
+        <li>Employees can use the standard <strong>Check-In / Check-Out</strong> flow</li>
+       <br>
+      <p class="oe_mt16">
+        Note: GPS accuracy depends on device/browser permissions and environment. Encourage employees to enable location permission.
+      </p>
+        </div>
+    </div>
+	
+    <!-- SCREENSHOTS -->
+    <div class="card-box">
+        <h2 class="section-title">Screenshots</h2>
+
+        <!-- Screenshot 01 -->
+        <div class="position-relative mb-4 shot-wrap">
+            <div class="p-md-5 p-3 position-relative">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="shot-title">
+                            <span style="color:#121212;">HR Attendance</span>
+                            <span style="color: var(--primary-color);"> Configuration and Controls</span>
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <p class="shot-desc">
+                            Configure and manage attendance rules with geo-zone based access control.
+                            Define allowed office areas and enforce location-aware check-in and check-out policies.
+                        </p>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                            <img alt="Configuration and Controls" class="img-fluid" loading="lazy"
+                                 src="./assets/screenshots/01.png" style="min-height:1px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screenshot 02 -->
+        <div class="position-relative mb-4 shot-wrap">
+            <div class="p-md-5 p-3 position-relative">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="shot-title">
+                            <span style="color:#121212;">HR Attendance</span>
+                            <span style="color: var(--primary-color);"> Configuration Location</span>
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <p class="shot-desc">
+                            Set up office locations using GPS coordinates or geo-zones.
+                            Each location can be configured to validate employee presence during check-in and check-out.
+                        </p>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                            <img alt="Configuration Location" class="img-fluid" loading="lazy"
+                                 src="./assets/screenshots/02.png" style="min-height:1px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screenshot 03 -->
+        <div class="position-relative mb-4 shot-wrap">
+            <div class="p-md-5 p-3 position-relative">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="shot-title">
+                            <span style="color:#121212;">HR Attendance</span>
+                            <span style="color: var(--primary-color);"> Check In / Check Out</span>
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <p class="shot-desc">
+                            Employees can check in and check out only when they are within the defined office location,
+                            ensuring accurate and location-verified attendance records.
+                        </p>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                            <img alt="Check In / Check Out" class="img-fluid" loading="lazy"
+                                 src="./assets/screenshots/03.png" style="min-height:1px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screenshot 04 -->
+        <div class="position-relative mb-4 shot-wrap">
+            <div class="p-md-5 p-3 position-relative">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="shot-title">
+                            <span style="color:#121212;">HR Attendance</span>
+                            <span style="color: var(--primary-color);"> View and Report</span>
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <p class="shot-desc">
+                            View detailed attendance logs with validated check-in and check-out locations.
+                            Managers can easily monitor attendance accuracy and employee presence.
+                        </p>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="d-inline-block p-3 shadow-sm" style="background-color:#fff; border-radius:10px">
+                            <img alt="View and Report" class="img-fluid" loading="lazy"
+                                 src="./assets/screenshots/04.png" style="min-height:1px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SUPPORT -->
+    <div class="card-box text-center">
+        <h2 class="section-title">Supported Editions</h2>
+        <p class="section-subtitle">Community • Enterprise • Odoo.sh</p>
+        <p class="mb-0">Compatible with Odoo 18.x</p>
+    </div>
+
+</div>
+</body>
+</html>

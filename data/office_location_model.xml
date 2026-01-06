@@ -1,0 +1,7 @@
+<odoo>
+  <record id="model_office_location" model="ir.model">
+    <field name="name">office.location</field>
+    <field name="model">office.location</field>
+    <field name="state">base</field>
+  </record>
+</odoo>
