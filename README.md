@@ -24,4 +24,4 @@ Commercial License — see `LICENSE` file.
 
 ## Support
 
-Email: adi.pramono@yahoo.co.id
+Email: support@apodoolabs.com
