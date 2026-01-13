@@ -1,13 +1,31 @@
 # Changelog
 
-## 1.0.0 — Initial Release
-- Production-ready geolocation attendance
-- Multi-office polygon geofence
-- PostGIS geometry support
-- Real-time map UI
-- Anti-spoofing logic
-- Optimized for Odoo 18
+All notable changes to this module are documented in this file.
 
-## 1.0.0-beta — Internal testing
-- Core features completed
-- Initial testing in live environment
+---
+
+## [18.0.1.0.0] – 2026-01-XX
+### Added
+- Attendance protection setting in HR Attendance configuration
+- Daily attendance limit enforcement per employee
+- Validation messages for duplicate check-in/check-out
+- Optional location-based attendance validation
+- JavaScript guard for frontend attendance actions
+
+### Improved
+- Attendance workflow validation
+- Error handling and user feedback
+- Performance and stability for production environments
+
+### Fixed
+- Duplicate attendance insertion edge cases
+- Frontend race conditions during check-in/check-out
+- Compatibility issues with custom attendance sync modules
+
+---
+
+## [18.0.0.0.0] – Initial Release
+### Added
+- Core attendance protection logic
+- HR Attendance model extensions
+- Base configuration support

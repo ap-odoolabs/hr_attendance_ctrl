@@ -1,27 +1,13 @@
-HR Attendance Geo-Control
-Copyright © 2025 Adi Pramono / AP Odoo Labs
-All Rights Reserved.
+Odoo Proprietary License v1.0 (OPL-1)
 
-This software is licensed, not sold.
+This module is licensed under the Odoo Proprietary License v1.0 (OPL-1).
 
-You are granted a non-transferable, non-exclusive license to use this software on the number
-of Odoo databases corresponding to the number of purchased licenses.
+Key points (summary):
+- You may use this module on the number of Odoo databases that match the number of licenses you purchased on Odoo Apps.
+- You may modify the module for your internal use.
+- You may NOT redistribute, resell, sublicense, or share the module (or its source code) with third parties.
 
-You may:
-- Use the software for your internal business needs.
-- Modify the code for internal use only.
+For the full license text and legal terms, please refer to the official Odoo Proprietary License v1.0 (OPL-1) published by Odoo S.A.
 
-You may NOT:
-- Redistribute, resell, sublicense, or share the code with third parties.
-- Publish, upload, or make the code accessible online.
-- Use any part of the code base to create competing products.
-- Reverse engineer, decompile, or disassemble this software for redistribution purposes.
-
-This module is provided "as is" without warranty of any kind, either express or implied, including
-but not limited to the implied warranties of merchantability or fitness for a particular purpose.
-
-By installing or using this module, you agree to these terms.
-
-For commercial support:
-AP Odoo Labs
-Email: support@apodoolabs.com
+Copyright © 2025 AP Odoo Labs (Adi Pramono). All Rights Reserved.
+Support: support@apodoolabs.com

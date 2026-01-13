@@ -6,7 +6,7 @@
     'author': 'Adi Pramono, AP Odoo Labs',
     'license': 'OPL-1',
     'category': 'Human Resources',
-    'website': 'https://apodoolabs.com',
+    'website': 'https://apodoolabs.com/',
     'depends': ['base', 'web', 'hr', 'hr_attendance'],
     'data': [
         'data/action_map_editor.xml',
@@ -26,6 +26,8 @@
             'hr_attendance_ctrl/static/src/js/attendance_left_observer.js',
         ],
     },
+    'images': ['static/description/banner.png'],
+    'support': 'support@apodoolabs.com',
     'installable': True,
     'application': False,
 }
