@@ -36,8 +36,8 @@
         target.dispatchEvent(new Event('input', { bubbles:true }));
         target.dispatchEvent(new Event('change', { bubbles:true }));
       }
-      console.debug(TAG, 'WKT injected to field.');
-    }catch(e){ console.warn(TAG, 'Failed to set WKT:', e); }
+      /* debug only  */
+    }catch(e){ /* debug only  */ }
   }
 
   function placeButton(field){
@@ -74,7 +74,7 @@
             if (wkt && /^POLYGON\s*\(\(/i.test(wkt)){
               iframe.contentWindow.postMessage({type:'odoo-geom-wkt-init', wkt: wkt}, '*');
             }
-          }catch(e){ console.error('Failed to send init WKT', e); }
+          }catch(e){ /* debug only  */ }
         };
         // send once on load (and also retry shortly after to be safe)
         iframe.addEventListener('load', function(){
@@ -107,7 +107,7 @@
     } else {
       document.body.appendChild(btn);
     }
-    console.debug(TAG, 'Draw on Map button injected.');
+    /* debug only  */
   }
 
   function init(){

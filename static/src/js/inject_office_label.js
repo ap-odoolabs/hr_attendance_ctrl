@@ -16,15 +16,6 @@
             return d.toISOString().replace('T',' ').replace('Z','') + '.' + String(d.getMilliseconds()).padStart(3,'0');
         } catch (e) { return String(Date.now()); }
     }
-    function _clog() {
-        try {
-            if (!window.__att_ctrl_debug) return;
-            var args = Array.prototype.slice.call(arguments);
-            args.unshift('[ATT_CTRL]', _ts());
-            console.log.apply(console, args);
-        } catch (e) {}
-    }
-
 
     var lastLat, lastLon, lastRenderedKey, busy = false;
     var LABEL_CLASS = 'o_hr_attendance_office_label';
@@ -160,13 +151,13 @@
 
     function getOfficeName(lat, lon) {
         var payload = { jsonrpc: '2.0', method: 'call', params: { latitude: lat, longitude: lon }, id: Date.now() };
-        _clog('RPC /attendance_ctrl/get_name -> sending', {lat: lat, lon: lon});
+        /* debug only  */
         return fetch('/attendance_ctrl/get_name', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'same-origin',
             body: JSON.stringify(payload),
-        }).then(function (r) { _clog('RPC /attendance_ctrl/get_name <- HTTP', {status: r.status}); return r.json(); })
+        }).then(function (r) { /* debug only  */ return r.json(); })
           .then(function (data) { return (data && data.result) ? data.result : data; })
           .catch(function () { return null; });
     }
@@ -176,17 +167,17 @@
         var tgt = findTarget();
         if (!tgt) return;
         busy = true;
-        _clog('ensureInjected: target found', {anchorText: (tgt.anchor.textContent||'').trim(), anchorClass: tgt.anchor.className});
+        /* debug only  */
 
         var renderWith = function (officeText, lat, lon) {
             lastLat = lat; lastLon = lon;
             renderAt(tgt.section, tgt.anchor, officeText, lat, lon);
-            _clog('render label', {office: officeText, lat: lat, lon: lon});
+            /* debug only  */
             busy = false;
         };
 
         if (navigator.geolocation) {
-            _clog('geolocation: requesting position');
+            /* debug only  */
             navigator.geolocation.getCurrentPosition(function (pos) {
                 var lat = pos.coords.latitude;
                 var lon = pos.coords.longitude;
@@ -226,7 +217,7 @@
             var matchText = (/check\s*[-_/ ]*\s*in/i.test(t) || /check\s*[-_/ ]*\s*out/i.test(t) || /sign\s*in/i.test(t) || /sign\s*out/i.test(t) || /\bmasuk\b/i.test(t) || /\bkeluar\b/i.test(t) || /masuk\s*in/i.test(t));
             var matchCls = (/(o_hr_attendance_sign_in_out|o_hr_attendance_sign_in|o_hr_attendance_sign_out)/i.test(cls));
             if (matchText || matchCls) {
-                _clog('CLICK candidate:', {text: t, className: cls, href: href, tag: btn.tagName});
+                /* debug only  */
             }
         } catch (e) {}
     }, true);

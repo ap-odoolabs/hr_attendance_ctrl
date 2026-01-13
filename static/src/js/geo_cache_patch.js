@@ -22,11 +22,6 @@
         window.__att_ctrl_geo_cache_enabled = true;
     }
 
-    function log() {
-        if (!window.__att_ctrl_debug) return;
-        try { console.log.apply(console, ['[ATT_CTRL][GEO_CACHE]'].concat([].slice.call(arguments))); } catch (e) {}
-    }
-
     function nowMs() { return Date.now ? Date.now() : (new Date()).getTime(); }
 
     // Max age of cached coord (ms)
@@ -115,13 +110,12 @@
             ts: nowMs(),
             coords: { latitude: lat, longitude: lon, accuracy: accuracy || null, altitude: null, altitudeAccuracy: null, heading: null, speed: null },
         };
-        log('Cache primed manually', window.__att_ctrl_geo_cache);
     };
 
     // Patch geolocation (if available)
     var geo = (navigator && navigator.geolocation) ? navigator.geolocation : null;
     if (!geo || typeof geo.getCurrentPosition !== 'function') {
-        log('navigator.geolocation not available; patch skipped');
+
         return;
     }
 
@@ -132,7 +126,6 @@
             if (window.__att_ctrl_geo_cache_enabled) {
                 var c = getCache();
                 if (c) {
-                    log('Using cached position (age<=15s, dist<=50m)', c);
                     if (typeof success === 'function') {
                         // Call success asynchronously to preserve async contract
                         setTimeout(function () {
@@ -163,5 +156,4 @@
         }, options);
     };
 
-    log('Geolocation cache patch active (non-AMD)');
 })();

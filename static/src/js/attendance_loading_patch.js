@@ -17,11 +17,6 @@
     function _ts() {
         try { return new Date().toISOString(); } catch (e) { return ''; }
     }
-    function _log() {
-        if (window.__att_ctrl_debug) {
-            try { console.log.apply(console, ['[ATT_CTRL][LOADING]', _ts()].concat([].slice.call(arguments))); } catch (e) {}
-        }
-    }
 
     // Heuristic: identify attendance Check In/Out button
     function _isAttendanceButton(el) {
@@ -153,12 +148,10 @@
         loading = true;
         var ov = _ensureOverlay();
         ov.style.display = 'flex';
-        _log('Overlay ON', reason || '');
 
         // Safety auto-hide (e.g. user denied geolocation, request never sent)
         clearTimeout(loadingTimer);
         loadingTimer = setTimeout(function () {
-            _log('Overlay auto-hide after timeout');
             hideLoading('timeout');
         }, 90000);
     }
@@ -172,7 +165,6 @@
         loadingTimer = null;
         _setButtonDisabled(lastClickedButton, false);
         lastClickedButton = null;
-        _log('Overlay OFF', reason || '');
     }
 
     // 1) Capture click early to show loading immediately
@@ -210,7 +202,6 @@
             var isCheck = (typeof url === 'string' && url.indexOf('/hr_attendance/systray_check_in_out') !== -1);
 
             if (isCheck) {
-                _log('Detected XHR systray_check_in_out -> will hide overlay on loadend');
                 var xhr = this;
                 var done = function (evt) {
                     xhr.removeEventListener('loadend', done);
@@ -223,7 +214,6 @@
         };
 
         XHR.__attCtrlPatched = true;
-        _log('XHR patched');
     })();
 
     // 3) Also hide overlay on page unload (avoid stuck overlay if navigation)
