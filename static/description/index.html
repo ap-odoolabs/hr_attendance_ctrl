@@ -131,7 +131,7 @@
     </section>
 
     <section class="card">
-      <h2>⭐ What this module does</h2>
+      <h2>🌟 What this module does</h2>
       <p>
         HR Attendance Control helps you ensure employees can only check in/out from approved office areas
         using polygon-based locations (WKT) and GPS coordinates. It also provides UX and control patches
@@ -147,6 +147,18 @@
         <li><b>Attendance protection</b> hooks to avoid duplicate attendance records (when used with daily-limit logic).</li>
         <li><b>Loading indicator</b> on check-in/out to prevent double-click / repeated submissions.</li>
         <li><b>Map/WKT helper tools</b> to simplify polygon editing and troubleshooting.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><span class="emoji">📝</span>Installation & Configuration</h2>
+      <ul>
+	    <li>Install postgis library: <code>apt install postgis postgresql-16-postgis-3</code> (for PostgreSQL Ver.16).
+		<li>enable the PostGIS extension on your PostgreSQL database: <code>CREATE EXTENSION IF NOT EXISTS postgis;</code>
+		<li>Install hr_attendance_ctrl
+        <li>Go to: Attendances → Office Locations
+        <li>Create an office and define the polygon boundary (WKT / map editor, depending on your setup)
+        <li>Employees can use the standard Check-In / Check-Out flow
       </ul>
     </section>
 
