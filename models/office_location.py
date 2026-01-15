@@ -11,7 +11,7 @@ class OfficeLocation(models.Model):
     name = fields.Char("Location Name", required=True)
 
     # UI helper fields
-    geom_wkt = fields.Text("Polygon WKT", help="Masukkan WKT Polygon (lon lat).")
+    geom_wkt = fields.Text("Polygon WKT", help="Enter WKT Polygon (lon lat).")
     geom_srid = fields.Selection(
         [('4326', 'EPSG:4326 (WGS84)'), ('3857', 'EPSG:3857 (Web Mercator)')],
         string="SRID",
@@ -42,19 +42,19 @@ class OfficeLocation(models.Model):
     # ===== Install/Upgrade hook =====
     def init(self):
         """
-        Dipanggil saat install/upgrade modul.
-        - Tidak membuat EXTENSION (hindari error privilege).
-        - Jika PostGIS sudah ada, buat kolom geometry & index jika belum ada.
+        Called when installing/upgrading a module.
+        - Do not create EXTENSION (avoid privilege error).
+        - If PostGIS already exists, create geometry & index columns if they don't exist already.
         """
         cr = self.env.cr
 
         if not self._has_postgis():
-            # Munculkan message box & hentikan proses install/upgrade
+            # Display a message box & stop the install/upgrade process
             raise UserError(_(
-                "[office.location] PostGIS belum aktif.\n\n"
-                "Aktifkan dulu di database ini:\n"
+                "[office.location] PostGIS is not active yet.\n\n"
+                "First activate it in this database:\n"
                 "  CREATE EXTENSION postgis;\n\n"
-                "Setelah aktif, ulangi proses Install/Upgrade modul."
+                "Once active, repeat the Install/Upgrade module process."
             ))
 
         # Buat kolom geometry jika belum ada
@@ -92,14 +92,14 @@ class OfficeLocation(models.Model):
     @api.model
     def create(self, vals):
         recs = super().create(vals)
-        # Apply geometry kalau PostGIS & kolom ada
+        # Apply geometry if PostGIS and column exist
         if self._has_postgis() and self._has_geom_column():
             try:
                 recs.action_apply_geometry()
             except Exception as e:
-                _logger.exception("[office.location] Gagal apply geometry saat create: %s", e)
+                _logger.exception("[office.location] Gagal menerapkan geometri saat pembuatan: %s", e)
         else:
-            _logger.info("[office.location] Skip apply geometry (PostGIS/kolom belum siap).")
+            _logger.info("[office.location] Skip apply geometry (PostGIS/columns not ready yet).")
         return recs
 
     def write(self, vals):
@@ -109,9 +109,9 @@ class OfficeLocation(models.Model):
                 try:
                     self.action_apply_geometry()
                 except Exception as e:
-                    _logger.exception("[office.location] Gagal apply geometry saat write: %s", e)
+                    _logger.exception("[office.location] Failed to apply geometry when writing: %s", e)
             else:
-                _logger.info("[office.location] Skip apply geometry (PostGIS/kolom belum siap).")
+                _logger.info("[office.location] Skip apply geometry (PostGIS/columns not ready yet).")
         return res
 
     # ===== Actions =====
