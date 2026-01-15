@@ -51,10 +51,10 @@ class OfficeLocation(models.Model):
         if not self._has_postgis():
             # Display a message box & stop the install/upgrade process
             raise UserError(_(
-                "[office.location] PostGIS is not active yet.\n\n"
-                "First activate it in this database:\n"
+                "[office.location] PostGIS is not enable yet.\n\n"
+                "Enable the PostGIS extension on your PostgreSQL database:\n"
                 "  CREATE EXTENSION postgis;\n\n"
-                "Once active, repeat the Install/Upgrade module process."
+                "Once enable, repeat the Install/Upgrade module process."
             ))
 
         # Buat kolom geometry jika belum ada
