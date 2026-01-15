@@ -22,7 +22,7 @@ This module adds an additional protection layer on top of Odoo’s standard Atte
 
 ---
 
-## 🚀 Main Features
+## ✨ Main Features
 
 ### ✔ One Attendance Per Day Protection
 When enabled, employees are limited to **a single attendance record per day**.  
