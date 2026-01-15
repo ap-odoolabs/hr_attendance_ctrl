@@ -65,13 +65,7 @@
     p{margin:0 0 10px 0; color:var(--muted)}
     ul{margin:10px 0 0 18px; color:var(--muted)}
     li{margin:6px 0}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:14px;
-    }
     @media (max-width: 720px){
-      .grid{grid-template-columns:1fr}
       .title{font-size:28px}
     }
     figure{margin:0}
@@ -102,15 +96,32 @@
       font-size:13px;
       padding:12px 0 2px;
     }
-  </style>
+
+/* --- AP Odoo Labs: Module Info safe screenshots --- */
+.ap_screens{
+  display:block !important;
+}
+.ap_screens figure{
+  display:block !important;
+  width:100% !important;
+  margin:0 0 14px 0 !important;
+}
+.ap_screens img{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+}
+
+</style>
 </head>
 <body>
   <div class="wrap">
     <section class="card hero">
-      <h1 class="title">HR Attendance Control</h1>
+      <h1 class="title"><span class="emoji">⚡</span>HR Attendance Control</h1>
       <p class="subtitle">Polygon-based office validation & attendance protection for Odoo 18</p>
       <div class="badge">Paid App • OPL-1 License</div>
-      <img class="banner" src="banner.png" alt="HR Attendance Control banner"/>
+      <img class="banner" src="banner.png" alt="HR Attendance Control banner" style="width: 800px; height: auto;" />
       <div class="pillrow" aria-label="highlights">
         <div class="pill">Office polygons (WKT)</div>
         <div class="pill">GPS validation</div>
@@ -120,7 +131,7 @@
     </section>
 
     <section class="card">
-      <h2>What this module does</h2>
+      <h2>⭐ What this module does</h2>
       <p>
         HR Attendance Control helps you ensure employees can only check in/out from approved office areas
         using polygon-based locations (WKT) and GPS coordinates. It also provides UX and control patches
@@ -129,7 +140,7 @@
     </section>
 
     <section class="card">
-      <h2>Main features</h2>
+      <h2><span class="emoji">✨</span>Main features</h2>
       <ul>
         <li><b>Office Location</b> model to maintain one or more office areas using polygon WKT.</li>
         <li><b>Polygon validation</b> to ensure check-in/out happens within allowed office area(s).</li>
@@ -140,27 +151,30 @@
     </section>
 
     <section class="card">
-      <h2>Screenshots</h2>
-      <div class="grid">
+      <h2><span class="emoji">🎯</span>Screenshots</h2>
+      <div class="ap_screens" style="display:block;">
         <figure>
-          <img class="shot" src="./assets/screenshots/01.png" alt="Screenshot 01"/>
+          <img class="shot" src="./assets/screenshots/01.png" alt="Screenshot 01" style="width: 1000px; height: auto;" />
           <figcaption>Office polygons: manage allowed work areas.</figcaption>
         </figure>
+        <br></br><br></br>
         <figure>
-          <img class="shot" src="./assets/screenshots/02.png" alt="Screenshot 02"/>
+          <img class="shot" src="./assets/screenshots/02.png" alt="Screenshot 02" style="width: 1000px; height: auto;" />
           <figcaption>Validate check-in/out against office polygons.</figcaption>
         </figure>
+		<br></br><br></br>
         <figure>
-          <img class="shot" src="./assets/screenshots/03.png" alt="Screenshot 03"/>
+          <img class="shot" src="./assets/screenshots/03.png" alt="Screenshot 03" style="width: 1000px; height: auto;" />
           <figcaption>Map & WKT utilities for quicker setup and debugging.</figcaption>
         </figure>
+		<br></br><br></br>
         <figure>
-          <img class="shot" src="./assets/screenshots/04.png" alt="Screenshot 04"/>
+          <img class="shot" src="./assets/screenshots/04.png" alt="Screenshot 04" style="width: 1000px; height: auto;" />
           <figcaption>Improved attendance UX with loading indicator / guard.</figcaption>
         </figure>
       </div>
     </section>
-
+<br></br><br></br>
     <section class="card">
       <h2>Support</h2>
       <p>
